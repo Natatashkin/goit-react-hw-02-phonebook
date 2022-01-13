@@ -1,9 +1,9 @@
 import styled from 'styled-components';
+import theme from '../../baseStyles/theme';
 
-const AppForm = styled.form`
-  /* display: flex;
-  flex-direction: column; */
-`;
+const { inputColor, inputValidColor, inputInvalidColor, inputPaddings } = theme;
+
+const AppForm = styled.form``;
 
 const FormField = styled.div`
   position: relative;
@@ -13,20 +13,20 @@ const FormField = styled.div`
 
 const Input = styled.input`
   width: 90%;
-  padding: 5px;
+  padding: ${inputPaddings};
 
   &:valid {
-    border: 1px solid green;
-    outline-color: green;
+    border: 1px solid ${inputValidColor};
+    outline-color: ${inputValidColor};
   }
   &:invalid {
-    border: 1px solid red;
-    outline-color: red;
+    border: 1px solid ${inputInvalidColor};
+    outline-color: ${inputInvalidColor};
   }
 
   &:not(:hover),
   &:not(:focus) {
-    border: 1px solid black;
+    border: 1px solid ${inputColor};
   }
 `;
 
@@ -45,19 +45,19 @@ const Label = styled.label`
   }
 
   ${Input}:valid + && {
-    color: green;
+    color: ${inputValidColor};
   }
   ${Input}:invalid + && {
-    color: red;
+    color: ${inputInvalidColor};
   }
 
   ${Input}:placeholder-shown + &&,
   ${Input}:not(:focus) + && {
-    color: black;
+    color: ${inputColor};
   }
 
   ${Input}:placeholder-shown:focus + && {
-    color: red;
+    color: ${inputInvalidColor};
   }
 `;
 

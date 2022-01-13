@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+
 import Form from './Form';
 import Contacts from './Contacts';
 import Section from './Section';
@@ -53,9 +54,10 @@ export default class App extends Component {
   numberFormatting = number => {
     console.log(number);
     const array = [...number];
-    for (let i = 3; i <= array.length; i += 3) {
+    for (let i = 3; i < array.length - 1; i += 3) {
       array.splice(i, 0, '-');
     }
+    console.log();
     return array.join('');
   };
 

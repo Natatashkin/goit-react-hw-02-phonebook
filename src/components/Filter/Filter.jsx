@@ -1,26 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { FaTimes } from 'react-icons/fa';
-import styled from 'styled-components';
-
-const FormFilter = styled.div`
-  margin-bottom: 15px;
-`;
-
-const FormLabel = styled.label`
-  /* margin-bottom: 15px; */
-`;
-
-const InputWrapper = styled.label`
-  display: flex;
-  align-items: center;
-  margin-top: 10px;
-  color: blue;
-`;
-
-const Input = styled.input`
-  margin-right: 5px;
-`;
+import {
+  FormFilter,
+  FormLabel,
+  InputWrapper,
+  Input,
+  FilterResetBtn,
+} from './Filter.styled';
 
 const Filter = ({ value, onChange, onClick }) => {
   return (
@@ -29,7 +16,9 @@ const Filter = ({ value, onChange, onClick }) => {
         Find contact by name:
         <InputWrapper>
           <Input type="text" name="filter" value={value} onChange={onChange} />
-          <FaTimes onClick={onClick} />
+          <FilterResetBtn type="button" onClick={onClick}>
+            {value && <FaTimes />}
+          </FilterResetBtn>
         </InputWrapper>
       </FormLabel>
     </FormFilter>
