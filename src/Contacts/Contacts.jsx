@@ -1,7 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { FaTrashAlt } from 'react-icons/fa';
-import { ContactsList, ListItem } from './Contacts.styled';
+import {
+  ContactsList,
+  ListItem,
+  SpanName,
+  SpanNumber,
+} from './Contacts.styled';
 import Button from '../Button';
 
 export default function Contacts({ list, onDeleteContact }) {
@@ -10,13 +15,9 @@ export default function Contacts({ list, onDeleteContact }) {
       {list.map(({ id, name, number }) => {
         return (
           <ListItem key={id}>
-            <span>{name}:</span>
-            <span>{number}</span>
-            <Button
-              type={'button'}
-              onDeleteItem={onDeleteContact}
-              idToDelete={id}
-            >
+            <SpanName>{name}:</SpanName>
+            <SpanNumber>{number}</SpanNumber>
+            <Button type={'button'} onClick={() => onDeleteContact(id)}>
               <FaTrashAlt />
             </Button>
           </ListItem>

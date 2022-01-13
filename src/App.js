@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
 import Form from './Form';
 import Contacts from './Contacts';
 import Section from './Section';
@@ -11,7 +10,7 @@ import { nanoid } from 'nanoid';
 const PhonebookApp = styled.div`
   margin: 25px auto;
   min-width: 400px;
-  max-width: 600px;
+  max-width: 500px;
   padding: 15px;
   border-radius: 10px;
   background-color: #fff;

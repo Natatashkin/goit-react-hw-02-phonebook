@@ -65,3 +65,10 @@ export default class Form extends Component {
     );
   }
 }
+
+Form.propType = {
+  value: PropTypes.string.isRequired,
+  nameInputId: PropTypes.string.isRequired,
+  numberInputId: PropTypes.string.isRequired,
+  onChange: PropTypes.func.isRequired,
+};

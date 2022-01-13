@@ -16,4 +16,12 @@ const ListItem = styled.li`
   }
 `;
 
-export { ContactsList, ListItem };
+const SpanName = styled.span`
+  flex-grow: 1;
+`;
+
+const SpanNumber = styled.span`
+  margin-right: 20px;
+`;
+
+export { ContactsList, ListItem, SpanName, SpanNumber };
