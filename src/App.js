@@ -29,6 +29,8 @@ export default class App extends Component {
 
   handleFormContact = ({ name, number }) => {
     const contactToAdd = this.checkName(name);
+    const editedNumber = this.numberFormatting(number);
+
     if (contactToAdd) {
       notify.show(`${name} is already in contacts`, 'error', 1500);
       return;
@@ -37,7 +39,7 @@ export default class App extends Component {
     const contact = {
       id: nanoid(),
       name,
-      number,
+      number: editedNumber,
     };
 
     this.setState(({ contacts }) => ({ contacts: [contact, ...contacts] }));
@@ -46,6 +48,15 @@ export default class App extends Component {
 
   handleFilterReset = () => {
     this.clearFilter();
+  };
+
+  numberFormatting = number => {
+    console.log(number);
+    const array = [...number];
+    for (let i = 3; i <= array.length; i += 3) {
+      array.splice(i, 0, '-');
+    }
+    return array.join('');
   };
 
   checkName = name => {

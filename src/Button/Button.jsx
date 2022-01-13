@@ -23,9 +23,9 @@ const FormButton = styled.button`
   }
 `;
 
-const Button = ({ type, title, children }) => {
+const Button = ({ type, title = '', onClick = () => {}, children = null }) => {
   return (
-    <FormButton type={type}>
+    <FormButton type={type} onClick={onClick}>
       {title}
       {children}
     </FormButton>
