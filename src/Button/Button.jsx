@@ -24,21 +24,27 @@ const FormButton = styled.button`
 `;
 
 const Button = ({ type, title, onDeleteItem, idToDelete, children }) => {
-  const buttonType = type;
   return (
     <>
-      {buttonType === 'button' ? (
-        <FormButton type={buttonType} onClick={() => onDeleteItem(idToDelete)}>
+      {type === 'button' ? (
+        <FormButton type={type} onClick={() => onDeleteItem(idToDelete)}>
           {title}
           {children}
         </FormButton>
       ) : (
-        <FormButton type={buttonType}>
+        <FormButton type={type}>
           {title}
           {children}
         </FormButton>
       )}
     </>
   );
+};
+
+Button.propTypes = {
+  type: PropTypes.string.isRequired,
+  title: PropTypes.string,
+  idToDelete: PropTypes.string,
+  children: PropTypes.node,
 };
 export default Button;

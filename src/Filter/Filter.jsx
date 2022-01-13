@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { FaTimes } from 'react-icons/fa';
 import styled from 'styled-components';
 
@@ -33,6 +34,12 @@ const Filter = ({ value, onChange, onClick }) => {
       </FormLabel>
     </FormFilter>
   );
+};
+
+Filter.propType = {
+  value: PropTypes.string,
+  onChange: PropTypes.func.isRequired,
+  onClick: PropTypes.func.isRequired,
 };
 
 export default Filter;

@@ -29,11 +29,10 @@ export default class Form extends Component {
   };
 
   render() {
-    console.log();
     return (
       <AppForm onSubmit={this.handleSubmit}>
         <FormField>
-          <Notifications options={{ width: '100%' }} />
+          <Notifications />
           <Input
             type="text"
             name="name"

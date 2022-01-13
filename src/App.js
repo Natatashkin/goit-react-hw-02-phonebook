@@ -64,7 +64,6 @@ export default class App extends Component {
   };
 
   deleteContact = index => {
-    console.log(index);
     this.setState(prevState => ({
       contacts: prevState.contacts.filter(contact => contact.id !== index),
     }));
@@ -104,7 +103,3 @@ export default class App extends Component {
     );
   }
 }
-
-App.propType = {
-  title: PropTypes.string,
-};
